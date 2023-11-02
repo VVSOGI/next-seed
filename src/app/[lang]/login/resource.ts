@@ -1,6 +1,10 @@
 import { oneMobileTitleOTF } from '@/fonts'
 
 export const styles = {
+    /** Page */
+    screen: 'h-screen',
+    section: 'flex justify-center h-[calc(100vh-84px)] flex-col gap-8 px-48 max-lg:px-12',
+
     /** Login */
     loginWrapper: 'dark:bg-neutral-700 flex h-[35rem] rounded-lg overflow-hidden shadow-primary',
     imageSection: 'flex-4 flex items-center justify-center max-lg:hidden',

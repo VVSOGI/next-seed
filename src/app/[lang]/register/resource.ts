@@ -4,7 +4,7 @@ export const styles = {
     /** Login */
     loginWrapper: 'dark:bg-neutral-700 flex h-[35rem] rounded-lg overflow-hidden shadow-primary',
     imageSection: 'flex-4 flex items-center justify-center max-lg:hidden',
-    image: 'h-1/2 w-1/2 object-cover',
+    image: 'h-1/2 w-1/2 object-contain',
 
     loginSection: 'flex-1.5 flex flex-col justify-center p-4 px-16',
     loginTitle: `${oneMobileTitleOTF.className} text-base3 font-bold mb-4`,

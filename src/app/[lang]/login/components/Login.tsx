@@ -1,42 +1,66 @@
 'use client'
 
-import { oneMobileTitleOTF } from '@/fonts'
-import React from 'react'
+import React, { useState } from 'react'
 import { styles } from '../resource'
+import { useRouter } from 'next/navigation'
+import { Locales } from '@/types/locales'
 
-export default function Login() {
+interface Props {
+    locale: Locales
+}
+
+export default function Login({ locale }: Props) {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const router = useRouter()
+
+    const handleLogin = async () => {
+        try {
+            const data = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+            console.log(data)
+        } catch (err: any) {
+            console.log(err)
+        }
+    }
+
     return (
-        <div className="dark:bg-neutral-700 flex h-[35rem] rounded-lg overflow-hidden shadow-primary">
-            <div className="flex-4 flex items-center justify-center max-lg:hidden">
-                <img className="h-1/2 w-1/2 object-cover" src="/images/icon-google.png" alt="" />
+        <div className={styles.loginWrapper}>
+            <div className={styles.imageSection}>
+                <img className={styles.image} src="/images/icon-google.png" alt="" />
             </div>
-            <div className="flex-1.5 flex flex-col justify-center p-4 px-16">
-                <div className={`${oneMobileTitleOTF.className} text-base3 font-bold mb-4`}>로그인</div>
-                <div className="mb-2">
+            <div className={styles.loginSection}>
+                <div className={styles.loginTitle}>로그인</div>
+                <div className={styles.inputWrapper}>
                     <input
                         type="text"
                         id="email"
                         placeholder="Enter your email"
-                        className="dark:bg-gray-100 border-grey-200 block w-full rounded-md border px-4 py-3 text-gray-900 focus-visible:outline-none text-base0"
+                        className={styles.input}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div className="mb-2">
+                <div className={styles.inputWrapper}>
                     <input
-                        type="text"
+                        type="password"
                         id="password"
                         placeholder="Enter your password"
-                        className="dark:bg-gray-100 border-grey-200 block w-full rounded-md border px-4 py-3 text-gray-900 focus-visible:outline-none text-base0"
+                        className={styles.input}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <div className="flex flex-col gap-2 mt-2">
-                    <button className="hover:bg-sky-600 active:bg-sky-700 px-4 py-3 bg-sky-500 text-white rounded-md border border-gray-200 text-base0">
+                <div className={styles.buttonsWrapper}>
+                    <button className={styles.loginButton} onClick={() => handleLogin()}>
                         로그인
                     </button>
-                    <button className="hover:bg-gray-100 active:bg-gray-200 px-4 py-3 rounded-md border border-gray-200 text-base0">
+                    <button className={styles.registerButton} onClick={() => router.push(`/${locale}/register`)}>
                         회원가입 하기
                     </button>
                 </div>
-                <div className="flex justify-center gap-8 mt-8">
+                <div className={styles.oauthWrapper}>
                     <div className={styles.oauthButton}>
                         <img className={styles.oauthImage} src="/images/icon-google.png" alt="" />
                     </div>

@@ -14,19 +14,6 @@ export default function Login({ locale }: Props) {
     const [password, setPassword] = useState('')
     const router = useRouter()
 
-    const handleLogin = async () => {
-        try {
-            const data = await fetch('/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password })
-            })
-            console.log(data)
-        } catch (err: any) {
-            console.log(err)
-        }
-    }
-
     return (
         <div className={styles.loginWrapper}>
             <div className={styles.imageSection}>
@@ -53,7 +40,7 @@ export default function Login({ locale }: Props) {
                     />
                 </div>
                 <div className={styles.buttonsWrapper}>
-                    <button className={styles.loginButton} onClick={() => handleLogin()}>
+                    <button className={styles.loginButton} onClick={() => {}}>
                         로그인
                     </button>
                     <button className={styles.registerButton} onClick={() => router.push(`/${locale}/register`)}>

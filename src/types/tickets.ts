@@ -1,7 +1,7 @@
 export interface Order {
     id: string
     title: string
-    body: string
+    description: string
     priority: 'high' | 'low'
-    user_email: string
+    email: string
 }

@@ -1,14 +1,14 @@
 import { oneMobileTitleOTF } from '@/fonts'
 
 export const styles = {
-    /** Page */
+    /** Layout */
     screen: 'h-screen',
     section: 'flex justify-center h-[calc(100vh-84px)] flex-col gap-8 px-48 max-lg:px-12',
 
     /** Login */
     loginWrapper: 'dark:bg-neutral-700 flex h-[35rem] rounded-lg overflow-hidden shadow-primary',
     imageSection: 'flex-4 flex items-center justify-center max-lg:hidden',
-    image: 'h-1/2 w-1/2 object-cover',
+    image: 'h-1/2 w-1/2 min-w-fit object-cover',
 
     loginSection: 'flex-1.5 flex flex-col justify-center p-4 px-16',
     loginTitle: `${oneMobileTitleOTF.className} text-base3 font-bold mb-4`,
@@ -16,8 +16,8 @@ export const styles = {
     input: 'dark:bg-gray-100 border-grey-200 block w-full rounded-md border px-4 py-3 text-gray-900 focus-visible:outline-none text-base0',
 
     buttonsWrapper: 'flex flex-col gap-2 mt-2',
-    loginButton: 'hover:bg-sky-600 active:bg-sky-700 px-4 py-3 bg-sky-500 text-white rounded-md border border-gray-200 text-base0',
-    registerButton: 'hover:bg-gray-100 active:bg-gray-200 px-4 py-3 rounded-md border border-gray-200 text-base0',
+    loginButton: 'hover:bg-blue-500 active:bg-blue-700 px-4 py-3 bg-blue-600 text-white rounded-md border border-gray-200 text-base0',
+    registerButton: 'hover:bg-gray-100 hover:text-gray-700 active:bg-gray-200 px-4 py-3 rounded-md border border-gray-200 text-base0',
 
     /** oAuth */
     oauthWrapper: 'flex justify-center gap-8 mt-8',

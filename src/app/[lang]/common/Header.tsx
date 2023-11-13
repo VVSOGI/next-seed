@@ -15,7 +15,7 @@ export const Header = ({ locale }: Props) => {
                         <Link className={styles.listItem} href={`/${locale}/home`}>
                             Home
                         </Link>
-                        <Link className={styles.listItem} href="/">
+                        <Link className={styles.listItem} href="/test">
                             Test
                         </Link>
                         <Link className={styles.listItem} href="/">

@@ -1,9 +1,16 @@
-export const getOrders = async () => {
-    const res = await fetch('http://localhost:4000/tickets', {
+import { Order } from '@/types/tickets'
+
+export const getOrders = async (): Promise<Order[]> => {
+    const res = await fetch('http://localhost:4000/boards', {
         next: {
-            revalidate: 100
+            revalidate: 0
         }
     })
-    const json = await res.json()
-    return json
+
+    if (res.ok) {
+        const json = await res.json()
+        return json
+    }
+
+    throw new Error(JSON.stringify(await res.json()))
 }

@@ -15,23 +15,6 @@ export default function Register({ locale }: Props) {
     const [checkPassword, setCheckPassword] = useState('')
     const router = useRouter()
 
-    const handleRegister = async () => {
-        const data = await fetch('/api/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password, checkPassword })
-        })
-
-        console.log(data)
-    }
-
-    useEffect(() => {
-        fetch('/api/register', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        })
-    }, [])
-
     return (
         <div className={styles.loginWrapper}>
             <div className={styles.imageSection}>
@@ -67,7 +50,7 @@ export default function Register({ locale }: Props) {
                     />
                 </div>
                 <div className={styles.buttonsWrapper}>
-                    <button className={styles.loginButton} onClick={handleRegister}>
+                    <button className={styles.loginButton} onClick={() => {}}>
                         회원가입 하기
                     </button>
                     <button className={styles.registerButton} onClick={() => router.push(`/${locale}/login`)}>

@@ -2,6 +2,7 @@ import { Locales } from '@/types/locales'
 import { Orders } from './components'
 import { styles } from './resource'
 import { getOrders } from './api/getOrders'
+import { commonStyles } from '@/app/common/resource'
 
 interface Props {
     params: { lang: Locales }
@@ -12,8 +13,8 @@ export default async function page({ params: { lang } }: Props) {
 
     return (
         <section>
-            <div className={styles.divider} />
-            <div className={styles.title}>Order</div>
+            <div className={commonStyles.divider} />
+            <div className={commonStyles.title}>Order</div>
             <div className={styles.orders}>
                 <div className={styles.ordersWrapper}>
                     <Orders data={data.slice(2, 3)} />

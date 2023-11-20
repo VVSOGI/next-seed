@@ -1,17 +1,15 @@
 import React from 'react'
-import { styles } from './resource'
-import MdEditor from './components/MdEditor'
-import MdViewer from './components/MdViewer'
 import QuillEditor from './components/QuillEditor'
+import { commonStyles } from '@/app/common/resource'
 
 export default function page() {
     return (
         <section>
-            <div className={styles.divider} />
-            <div className={styles.title}>Editor</div>
+            <div className={commonStyles.divider} />
+            <div className={commonStyles.title}>Editor</div>
             <QuillEditor />
-            <div className={styles.divider} />
-            <div className={styles.title}>Viewer</div>
+            <div className={commonStyles.divider} />
+            <div className={commonStyles.title}>Viewer</div>
             {/* <MdViewer /> */}
         </section>
     )

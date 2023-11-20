@@ -1,4 +1,12 @@
-export const styles = {
+export const commonStyles = {
+    /** Layout */
+    screen: 'h-auto min-h-[100vh]',
+    section: 'container flex flex-col gap-8 mb-10',
+
+    /** Page */
+    divider: 'mb-6 border-t border-t-gray-200',
+    title: 'mb-6 text-base4 font-bold',
+
     /** Header */
     headerWrapper: 'py-6',
     navbar: 'container flex items-center justify-between',

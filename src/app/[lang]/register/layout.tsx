@@ -1,6 +1,6 @@
 import React from 'react'
 import { Locales } from '@/types/locales'
-import { Footer, Header } from '../common'
+import { Footer, Header } from '../../common'
 
 export default function layout({ children, params }: { children: React.ReactNode; params: { lang: Locales } }) {
     const locale = params.lang

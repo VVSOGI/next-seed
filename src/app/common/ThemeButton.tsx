@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
-import { styles } from './resource'
+import { commonStyles } from './resource'
 
 export const ThemeButton = () => {
     const { resolvedTheme, setTheme } = useTheme()
@@ -20,10 +20,10 @@ export const ThemeButton = () => {
         <button
             aria-label="Toggle Dark Mode"
             type="button"
-            className={styles.themeButton}
+            className={commonStyles.themeButton}
             onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
         >
-            {resolvedTheme === 'dark' ? <SunIcon className={styles.sunIcon} /> : <MoonIcon className={styles.moonIcon} />}
+            {resolvedTheme === 'dark' ? <SunIcon className={commonStyles.sunIcon} /> : <MoonIcon className={commonStyles.moonIcon} />}
         </button>
     )
 }

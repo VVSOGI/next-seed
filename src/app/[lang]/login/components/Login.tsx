@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { styles } from '../resource'
 import { useRouter } from 'next/navigation'
 import { Locales } from '@/types/locales'
+import GoogleLoginButton from './GoogleLoginButton'
 
 interface Props {
     locale: Locales
@@ -49,7 +50,8 @@ export default function Login({ locale }: Props) {
                 </div>
                 <div className={styles.oauthWrapper}>
                     <div className={styles.oauthButton}>
-                        <img className={styles.oauthImage} src="/images/icon-google.png" alt="" />
+                        <GoogleLoginButton />
+                        {/* <img className={styles.oauthImage} src="/images/icon-google.png" alt="" /> */}
                     </div>
                     <div className={styles.oauthButton}>
                         <img className={styles.oauthImage} src="/images/icon-facebook.png" alt="" />

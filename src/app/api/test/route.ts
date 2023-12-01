@@ -7,12 +7,6 @@ import * as dateFn from 'date-fns'
 import { join } from 'path'
 import { mkdir, stat, writeFile } from 'fs/promises'
 
-export const config = {
-    api: {
-        bodyParser: false
-    }
-}
-
 export async function POST(req: Request) {
     const formData = await req.formData()
     const file = formData.get('file') as Blob | null

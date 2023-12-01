@@ -12,6 +12,7 @@
     "@formatjs/intl-localematcher": "^0.4.2",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@heroicons/react": "^2.0.18",
+    "@react-oauth/google": "^0.12.1",
     "@types/negotiator": "^0.6.2",
     "@types/react-draft-wysiwyg": "^1.13.7",
     "@uiw/react-md-editor": "^3.25.6",

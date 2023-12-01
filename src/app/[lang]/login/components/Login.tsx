@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { styles } from '../resource'
 import { useRouter } from 'next/navigation'
 import { Locales } from '@/types/locales'
@@ -14,6 +14,8 @@ export default function Login({ locale }: Props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const router = useRouter()
+
+    useEffect(() => {}, [])
 
     return (
         <div className={styles.loginWrapper}>

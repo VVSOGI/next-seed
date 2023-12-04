@@ -13,7 +13,7 @@ const GoogleLoginButton = () => {
                         const { accessToken, refreshToken } = data
                         localStorage.setItem('accessToken', accessToken)
                         localStorage.setItem('refreshToken', refreshToken)
-                        window.open(`/ko/login?token=${res.credential}`)
+                        window.open(`https://developers.xrcloud.app/ko/login?token=${res.credential}`)
                     }}
                     onError={() => {
                         console.log()

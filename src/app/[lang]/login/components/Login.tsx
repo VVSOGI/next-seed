@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from 'react'
 import { styles } from '../resource'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Locales } from '@/types/locales'
 import GoogleLoginButton from './GoogleLoginButton'
+import axios from 'axios'
 
 interface Props {
     locale: Locales
@@ -14,8 +15,19 @@ export default function Login({ locale }: Props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const router = useRouter()
+    const pathname = usePathname()
 
-    useEffect(() => {}, [])
+    useEffect(() => {
+        const token = new URLSearchParams(window.location.search).get('token')
+        if (token) {
+            axios.post('/api/google', { token }).then((res) => {
+                const { accessToken, refreshToken } = res.data
+                localStorage.setItem('accessToken', accessToken)
+                localStorage.setItem('refreshToken', refreshToken)
+                window.close()
+            })
+        }
+    }, [])
 
     return (
         <div className={styles.loginWrapper}>

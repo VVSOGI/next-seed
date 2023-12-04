@@ -8,10 +8,12 @@ const GoogleLoginButton = () => {
         <>
             <GoogleOAuthProvider clientId={clientId}>
                 <GoogleLogin
-                    onSuccess={(res) => {
-                        axios.post('/api/google', { token: res.credential }).then((res) => {
-                            console.log(res)
-                        })
+                    onSuccess={async (res) => {
+                        const { data } = await axios.post('/api/google', { token: res.credential })
+                        const { accessToken, refreshToken } = data
+                        localStorage.setItem('accessToken', accessToken)
+                        localStorage.setItem('refreshToken', refreshToken)
+                        window.open(`/ko/login?token=${res.credential}`)
                     }}
                     onError={() => {
                         console.log()

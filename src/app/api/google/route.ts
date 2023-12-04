@@ -12,7 +12,9 @@ export async function POST(req: NextRequest) {
         token: token
     })
 
-    return NextResponse.json(data, {
+    console.log(data.data)
+
+    return NextResponse.json(data.data, {
         status: 200
     })
 }

@@ -24,8 +24,12 @@ export default function Login({ locale }: Props) {
                 const { accessToken, refreshToken } = res.data
                 localStorage.setItem('accessToken', accessToken)
                 localStorage.setItem('refreshToken', refreshToken)
-                window.close()
+                return window.close()
             })
+        }
+        const accessToken = localStorage.getItem('accessToken')
+        if (accessToken) {
+            return router.push(`/${locale}/home`)
         }
     }, [])
 

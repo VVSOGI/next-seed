@@ -1,18 +1,20 @@
+import { oneMobileOTF, oneMobilePop, oneMobileTitleOTF } from '@/fonts'
+
 export const commonStyles = {
     /** Layout */
-    screen: 'h-auto min-h-[100vh]',
-    section: 'container flex flex-col gap-8 mb-[10rem]',
+    screen: 'h-auto',
+    section: 'h-full min-h-[100vh] container flex gap-8 mb-[10rem]',
 
     /** Page */
     divider: 'mb-6 border-t border-t-gray-200',
-    title: 'mb-6 text-base4 font-bold',
+    title: `${oneMobileOTF.className} mb-6 text-base4 font-bold`,
 
     /** Header */
     headerWrapper: 'py-6',
     navbar: 'container flex items-center justify-between',
     listWrapper: 'flex gap-6',
     list: 'flex gap-12',
-    listItem: 'dark:text-orange-300 font-bold',
+    listItem: `${oneMobileTitleOTF.className} dark:text-orange-300 font-bold`,
 
     /** Footer */
     footerWrapper: 'flex h-[10rem] items-center justify-center border-t border-t-gray-200 p-[9.25rem] py-6',

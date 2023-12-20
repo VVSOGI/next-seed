@@ -1,8 +1,16 @@
+'use client'
+
 import React from 'react'
 import { styles } from '../resource'
 import { Orders } from '.'
+import { Order } from '@/types/tickets'
 
-export default function Desktop() {
+interface Props {
+    data: Order[]
+    next: number
+}
+
+export default function Desktop({ data, next }: Props) {
     return (
         <div className={styles.orders}>
             <div className={styles.ordersWrapper}>

@@ -1,10 +1,11 @@
 'use client'
 
 import React from 'react'
-import { styles } from '../resource'
-import { Orders } from '.'
 import { Order } from '@/types/tickets'
 import { useResponsiveScreen } from '@/app/hooks/useResponsiveScreen'
+import Desktop from './Desktop'
+import Tablet from './Tablet'
+import Mobile from './Mobile'
 
 interface Props {
     data: Order[]
@@ -13,20 +14,28 @@ interface Props {
 
 export default function OrdersWrapper({ data, next }: Props) {
     const { isMobile, isTablet, isDesktop } = useResponsiveScreen()
+    const [loading, setLoading] = React.useState(false)
 
-    return (
-        <div className={styles.orders}>
-            <div className={styles.ordersWrapper}>
-                <Orders data={data.slice(next, next + 5)} />
-            </div>
-            <div className={styles.ordersWrapper}>
-                <Orders data={data.slice(next + 5, next + 10)} />
-            </div>
-            <div className={styles.ordersWrapper}>
-                <Orders data={data.slice(next + 10, next + 15)} />
-            </div>
-        </div>
-    )
+    React.useEffect(() => {
+        setLoading(true)
+    }, [next])
+
+    if (!loading)
+        return (
+            <>
+                <div className="hidden">
+                    <Mobile data={data} next={next} />
+                </div>
+            </>
+        )
+
+    if (isMobile) return <Mobile data={data} next={next} />
+
+    if (isTablet) return <Tablet data={data} next={next} />
+
+    if (isDesktop) return <Desktop data={data} next={next} />
+
+    return <Desktop data={data} next={next} />
 }
 
 /**

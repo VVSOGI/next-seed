@@ -1,3 +1,5 @@
+'use client'
+
 import { Order } from '@/types/tickets'
 import { HandThumbDownIcon, HandThumbUpIcon } from '@heroicons/react/24/solid'
 import React from 'react'

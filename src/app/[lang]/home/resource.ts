@@ -5,7 +5,7 @@ export const styles = {
 
     /** Page */
     orders: 'flex gap-4',
-    ordersWrapper: 'flex flex-col flex-1',
+    ordersWrapper: 'flex flex-col flex-1 gap-4',
 
     /** Order */
     noContents: `${oneMobilePopOTF.className} dark:text-slate-200 h-auto flex justify-center items-center text-base1 text-slate-800`,

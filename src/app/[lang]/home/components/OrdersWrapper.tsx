@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { styles } from '../resource'
 import { Orders } from '.'
 import { Order } from '@/types/tickets'
+import { useResponsiveScreen } from '@/app/hooks/useResponsiveScreen'
 
 interface Props {
     data: Order[]
@@ -11,33 +12,24 @@ interface Props {
 }
 
 export default function OrdersWrapper({ data, next }: Props) {
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        setLoading(false)
-    }, [])
-
-    if (loading)
-        return (
-            <div>
-                ...loading
-                <div className="hidden">
-                    <Orders data={data.slice(next, next + 30)} />
-                </div>
-            </div>
-        )
+    const { isMobile, isTablet, isDesktop } = useResponsiveScreen()
 
     return (
         <div className={styles.orders}>
             <div className={styles.ordersWrapper}>
-                <Orders data={data.slice(next, next + 10)} />
+                <Orders data={data.slice(next, next + 5)} />
             </div>
             <div className={styles.ordersWrapper}>
-                <Orders data={data.slice(next + 10, next + 20)} />
+                <Orders data={data.slice(next + 5, next + 10)} />
             </div>
             <div className={styles.ordersWrapper}>
-                <Orders data={data.slice(next + 20, next + 30)} />
+                <Orders data={data.slice(next + 10, next + 15)} />
             </div>
         </div>
     )
 }
+
+/**
+ * sso를 높이기 위해서 css에 display none을 한 다음 검색 결과로 데이터를 받아올 수 있게끔만 하고
+ * 실제 브라우저로 들어온 사용자에게는 노출하지 않는 방식으로 대응해봤는데 나쁘지 않은듯.
+ */

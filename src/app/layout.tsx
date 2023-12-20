@@ -1,3 +1,4 @@
+import { OrdersProvider } from '@/contexts/OrdersProvider'
 import './globals.css'
 import ThemeProviders from '@/provider/theme'
 
@@ -12,7 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className="dark:bg-zinc-800">
-                <ThemeProviders>{children}</ThemeProviders>
+                <OrdersProvider>
+                    <ThemeProviders>{children}</ThemeProviders>
+                </OrdersProvider>
             </body>
         </html>
     )

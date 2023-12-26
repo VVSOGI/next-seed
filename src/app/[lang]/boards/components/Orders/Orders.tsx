@@ -1,18 +1,16 @@
 'use client'
 
 import React from 'react'
-import { Order } from '@/types/tickets'
+import { OrderType } from '@/types/tickets'
 import { useResponsiveScreen } from '@/app/hooks/useResponsiveScreen'
-import Desktop from './Desktop'
-import Tablet from './Tablet'
-import Mobile from './Mobile'
+import { Desktop, Mobile, Tablet } from '..'
 
 interface Props {
-    data: Order[]
+    data: OrderType[]
     next: number
 }
 
-export default function OrdersWrapper({ data, next }: Props) {
+export function Orders({ data, next }: Props) {
     const { isMobile, isTablet, isDesktop } = useResponsiveScreen()
     const [loading, setLoading] = React.useState(false)
 

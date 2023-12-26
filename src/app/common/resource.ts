@@ -1,4 +1,4 @@
-import { oneMobileOTF, oneMobilePop, oneMobileTitleOTF } from '@/fonts'
+import { oneMobileOTF, oneMobileTitleOTF } from '@/fonts'
 
 export const commonStyles = {
     /** Layout */

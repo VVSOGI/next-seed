@@ -14,8 +14,8 @@ export const Header = ({ locale }: Props) => {
                         <Link className={commonStyles.listItem} href={`/${locale}/home`}>
                             Home
                         </Link>
-                        <Link className={commonStyles.listItem} href="/editor">
-                            Editor
+                        <Link className={commonStyles.listItem} href={`/${locale}/boards`}>
+                            Boards
                         </Link>
                         <Link className={commonStyles.listItem} href="/other">
                             Other

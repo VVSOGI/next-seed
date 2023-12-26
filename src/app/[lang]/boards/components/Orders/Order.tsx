@@ -1,18 +1,18 @@
 'use client'
 
-import { Order } from '@/types/tickets'
+import { OrderType } from '@/types/tickets'
 import { HandThumbDownIcon, HandThumbUpIcon } from '@heroicons/react/24/solid'
 import React from 'react'
-import { styles } from '../resource'
+import { styles } from '../../resource'
 
 interface Props {
-    data: Order[]
+    data: OrderType[]
 }
 
-export function Orders({ data }: Props) {
+export function Order({ data }: Props) {
     if (!data.length) return <div className={styles.noContents}>No orders</div>
 
-    return data.map((order: Order) => (
+    return data.map((order: OrderType) => (
         <div key={order.id} className={styles.orderWrapper}>
             <div>
                 <div className={styles.orderTitleWrapper}>

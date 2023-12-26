@@ -14,20 +14,21 @@ export default function Error({ error }: any) {
     const router = useRouter()
 
     useEffect(() => {
-        const res = JSON.parse(error.message)
-        setMessage(res)
+        const errorResponse = JSON.parse(error.message)
+        setMessage(errorResponse)
     }, [])
 
     return (
-        <div className="grid h-screen px-4 place-content-center">
-            <div className="text-center -translate-y-[5rem]">
-                <h1 className="font-black text-gray-200 text-[40px]">{message?.statusCode}</h1>
+        <div className="grid w-full h-screen px-4 place-content-center">
+            <div className="w-full text-center -translate-y-[5rem]">
+                <h1 className="font-black text-gray-200 text-[40px]">Error Status Code</h1>
+                <h1 className="font-black text-[#e34f4f] text-[30px]">{message?.statusCode}</h1>
 
                 <p className="lg:text-[100px] dark:text-gray-400 text-[72px] font-bold tracking-tight text-gray-900 sm:text-4xl">
                     {message?.error}
                 </p>
 
-                <p className="mt-4 text-gray-500 text-[24px]">{message?.message}</p>
+                <p className="text-gray-500 text-[24px]">{message?.message}</p>
 
                 <button
                     onClick={() => router.push('/home')}

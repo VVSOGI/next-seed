@@ -14,8 +14,7 @@ export default function Error({ error }: any) {
     const router = useRouter()
 
     useEffect(() => {
-        const errorResponse = JSON.parse(error.message)
-        setMessage(errorResponse)
+        setMessage(error)
     }, [])
 
     return (

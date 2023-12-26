@@ -1,6 +1,5 @@
 import { OrderType } from '@/types/tickets'
 import axios from 'axios'
-import { NextResponse } from 'next/server'
 
 export const getOrders = async (): Promise<OrderType[] | any> => {
     try {

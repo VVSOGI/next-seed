@@ -17,9 +17,6 @@ export const Header = ({ locale }: Props) => {
                         <Link className={commonStyles.listItem} href={`/${locale}/order`}>
                             Order
                         </Link>
-                        <Link className={commonStyles.listItem} href="/other">
-                            Other
-                        </Link>
                     </li>
                 </ul>
 

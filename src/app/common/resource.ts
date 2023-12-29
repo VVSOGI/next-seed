@@ -7,7 +7,7 @@ export const commonStyles = {
 
     /** Page */
     divider: 'mb-6 border-t border-t-gray-200',
-    title: `${oneMobileOTF.className} mb-6 text-base4 font-bold`,
+    title: `${oneMobileTitleOTF.className} mb-6 text-base4 font-bold`,
 
     /** Header */
     headerWrapper: 'py-6',

@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "docker-compose:up": "docker-compose --profile project_1 up --build -d"
     },
     "dependencies": {
         "@formatjs/intl-localematcher": "^0.4.2",

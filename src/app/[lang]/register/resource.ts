@@ -2,7 +2,7 @@ import { oneMobileTitleOTF } from '@/fonts'
 
 export const styles = {
     /** Login */
-    loginWrapper: 'dark:bg-neutral-700 flex h-[35rem] rounded-lg overflow-hidden shadow-primary',
+    loginWrapper: 'dark:bg-dark-bg-title flex h-[35rem] rounded-lg overflow-hidden shadow-default',
     imageSection: 'flex-4 flex items-center justify-center max-lg:hidden',
     image: 'h-1/2 w-1/2 object-contain',
 

@@ -17,7 +17,6 @@ export default async function page({ params, searchParams }: Props) {
         return (
             <section className="w-full">
                 <div className={commonStyles.divider} />
-                <div className={commonStyles.title}>Order</div>
                 <Orders next={next} data={data} />
             </section>
         )

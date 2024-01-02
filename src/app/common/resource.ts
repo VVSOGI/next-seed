@@ -1,4 +1,4 @@
-import { oneMobileOTF, oneMobileTitleOTF } from '@/fonts'
+import { oneMobilePopOTF, oneMobileTitleOTF } from '@/fonts'
 
 export const commonStyles = {
     /** Layout */
@@ -6,7 +6,7 @@ export const commonStyles = {
     section: 'h-full min-h-[100vh] container flex gap-8 mb-[10rem]',
 
     /** Page */
-    divider: 'mb-6 border-t border-t-gray-200',
+    divider: 'mb-[4rem] border-t border-t-gray-200',
     title: `${oneMobileTitleOTF.className} mb-6 text-base4 font-bold`,
 
     /** Header */
@@ -14,7 +14,7 @@ export const commonStyles = {
     navbar: 'container flex items-center justify-between',
     listWrapper: 'flex gap-6',
     list: 'flex gap-12',
-    listItem: `${oneMobileTitleOTF.className} dark:text-orange-300 font-bold`,
+    listItem: `${oneMobilePopOTF.className} dark:text-[#239c62]`,
 
     /** Footer */
     footerWrapper: 'flex h-[10rem] items-center justify-center border-t border-t-gray-200 p-[9.25rem] py-6',
@@ -24,6 +24,6 @@ export const commonStyles = {
     themeButton: 'hover:bg-zinc-100 dark:hover:bg-zinc-700 flex items-center justify-center rounded-lg p-2 transition-colors',
 
     /** Icons */
-    sunIcon: 'h-5 w-5 text-orange-300',
-    moonIcon: 'h-5 w-5 text-slate-800'
+    sunIcon: 'h-5 w-5 text-[#239c62]',
+    moonIcon: 'h-5 w-5 text-[#202026]'
 }

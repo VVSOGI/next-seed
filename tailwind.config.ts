@@ -5,16 +5,27 @@ const config: Config = {
     darkMode: 'class',
     mode: 'jit',
     theme: {
-        // colors: {
-        //     primary: 'rgb(var(--color-primary) / <alpha-value>)',
-        //     text: 'rgb(var(--color-text) / <alpha-value>)',
-        //     success: 'rgb(var(--color-success) / <alpha-value>)',
-        //     info: 'rgb(var(--color-info) / <alpha-value>)',
-        //     warn: 'rgb(var(--color-warn) / <alpha-value>)',
-        //     error: 'rgb(var(--color-error) / <alpha-value>)',
-        //     transparent: 'transparent',
-        //     current: 'currentColor'
-        // },
+        colors: {
+            primary: '#60d29b',
+            'bg-title': '#e4e4eb',
+            'zinc-100': '#f4f4f5',
+            'zinc-700': '#3f3f46',
+            'gray-100': '#f4f4f5',
+            'gray-200': '#e4e4e7',
+            'gray-600': '#52525b',
+            'gray-700': '#3f3f46',
+            'gray-900': '#202026',
+            'slate-200': '#e2e8f0',
+            'slate-600': '#475569',
+            'slate-800': '#1e293b',
+            'lime-500': '#84cc16',
+            'red-500': '#ef4444',
+
+            dark: {
+                primary: '#239c62',
+                'bg-title': '#239c6280'
+            }
+        },
         container: {
             center: true,
             padding: {
@@ -40,7 +51,7 @@ const config: Config = {
                 4: '4 4 0%'
             },
             boxShadow: {
-                primary: '0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1)',
+                default: '0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1)',
                 icon: '0 0 0.25rem 0 rgba(0, 0, 0, 0.2)'
             },
             backgroundImage: {
